@@ -1,0 +1,35 @@
+<div>
+  <div style="margin: 20px; text-align: center; color: lightcoral">
+    <h5>Regular fee: 500</h5>
+    <h5>Premium fee: 1000</h5>
+  </div>
+</div>
+<div>
+  <div style="margin: 20px; text-align: center; font-weight: 600; color: red">
+    <h3>Rent Car Cost Overview</h3>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Car Type</th>
+        <th scope="col">Days Rented</th>
+        <th scope="col">Rent Price</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ data.Name }}</td>
+        <td *ngIf="data.CarTypeId == 1">SUV</td>
+        <td *ngIf="data.CarTypeId == 2">Sedan</td>
+        <td *ngIf="data.CarTypeId == 3">HatchBack</td>
+        <td>{{ data.DaysRented }}</td>
+        <td>{{ price }}</td>
+        <td>
+          <button class="btn btn-success" (click)="buy(data,$event)">Buy</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
