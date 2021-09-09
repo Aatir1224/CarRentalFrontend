@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api/',
+  // apiUrl: 'http://localhost:3000/api/',
+  apiUrl: 'https://carrentalshop.herokuapp.com/api/',
+  // filepath: 'http://localhost:3000/',
+  filepath: 'https://carrentalshop.herokuapp.com/',
 };
 
 /*

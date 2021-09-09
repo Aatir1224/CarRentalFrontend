@@ -23,8 +23,9 @@
                 <th scope="col" width="10%">S.No.</th>
                 <th scope="col" width="25%">Name</th>
                 <th scope="col" width="10%">Rented</th>
-                <th scope="col" width="25%">No. Days Rented</th>
+                <th scope="col" width="10%">No. Days Rented</th>
                 <th scope="col" width="15.5%">Car Type</th>
+                <th scope="col" width="20%">Photo</th>
                 <th scope="col" width="15%">Rent a Car</th>
               </tr>
             </thead>
@@ -38,6 +39,47 @@
                 <td *ngIf="data.CarTypeId == 1">SUV</td>
                 <td *ngIf="data.CarTypeId === 2">Sedan</td>
                 <td *ngIf="data.CarTypeId === 3">HatchBack</td>
+                <td>
+                  <table>
+                    <!-- <thead>
+                      <tr>
+                        <th></th>
+                      </tr>
+                    </thead> -->
+                    <tbody>
+                      <tr>
+                        <td>
+                          <tr>
+                            <td>
+                              <img
+                                src="{{ envir.filepath }}{{ data.image1 }}"
+                                alt="img"
+                                height="100"
+                                width="100"
+                              />
+                            </td>
+                            <td>
+                              <img
+                                src="{{ envir.filepath }}{{ data.image2 }}"
+                                alt="img"
+                                height="100"
+                                width="100"
+                              />
+                            </td>
+                            <td>
+                              <img
+                                src="{{ envir.filepath }}{{ data.image3 }}"
+                                alt="img"
+                                height="100"
+                                width="100"
+                              />
+                            </td>
+                          </tr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
                 <td *ngIf="data.isRented == 0">
                   <a routerLink="/viewpage/{{ data.id }}">View</a>
                 </td>

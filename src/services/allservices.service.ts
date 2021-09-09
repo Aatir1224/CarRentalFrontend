@@ -11,22 +11,23 @@ export class AllservicesService {
       'Content-Type': 'application/json',
     }),
   };
+  envir: any = { ...environment, production: true };
   public getAllCars() {
-    return this.http.get(environment.apiUrl + 'cars', this.httpOption);
+    return this.http.get(this.envir.apiUrl + 'cars', this.httpOption);
   }
   public getSingleCar(id) {
-    return this.http.get(environment.apiUrl + `cars/${id}`, this.httpOption);
+    return this.http.get(this.envir.apiUrl + `cars/${id}`, this.httpOption);
   }
   public rentCars(data) {
     return this.http.post(
-      environment.apiUrl + 'cars/create/rent',
+      this.envir.apiUrl + 'cars/create/rent',
       data,
       this.httpOption
     );
   }
   public getInvoice(id) {
     return this.http.get(
-      environment.apiUrl + `cars/getRentedCars/${id}`,
+      this.envir.apiUrl + `cars/getRentedCars/${id}`,
       this.httpOption
     );
   }
